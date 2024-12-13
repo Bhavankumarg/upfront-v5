@@ -89,7 +89,7 @@ const ImpactStoriesPost = ({ slug }) => {
           </div>
         </div>
       ) : post ? (
-        <div className="bg-[#EFEFEF] p-10">
+        <div className="bg-[#EFEFEF] lg:p-10 p-3">
           <div>
             <p className="text-[#0A0A0A] container mx-auto text-xl">
               <Link href="/">Home /</Link>
@@ -106,8 +106,8 @@ const ImpactStoriesPost = ({ slug }) => {
               {allPosts && (
                 <Link href="/impact-stories">
                   <button className="focus:outline-none">
-                    <p className="flex items-center gap-3 text-xl text-[#404040]">
-                      <RiArrowLeftLine size={30} /> Back to All Impact Stories
+                    <p className="flex items-center gap-3 lg:text-xl text-[#404040]">
+                      <RiArrowLeftLine className="lg:text-3xl"  /> Back to All Impact Stories
                     </p>
                   </button>
                 </Link>
@@ -115,18 +115,18 @@ const ImpactStoriesPost = ({ slug }) => {
               {nextPost && (
                 <Link href={`/impact-stories/${nextPost.slug}`}>
                   <button className="focus:outline-none">
-                    <p className="flex text-xl items-center gap-3 text-[#404040]">
+                    <p className="flex lg:text-xl items-center gap-3 text-[#404040]">
                       Next Impact Story
-                      <RiArrowRightLine size={30} />
+                      <RiArrowRightLine className="lg:text-3xl"  />
                     </p>
                   </button>
                 </Link>
               )}
             </div>
-            <div className="flex flex-wrap lg:flex-nowrap gap-10 lg:pt-16 justify-center p-10">
+            <div className="flex flex-wrap lg:flex-nowrap gap-10 lg:pt-16 justify-center lg:p-10 p-2">
               <div className="lg:w-3/4 w-full lg:px-10 container 2xl:mx-auto">
                 <div
-                  className="text-3xl p-5 text-center text-[#0A0A0A]"
+                  className="lg:text-3xl text-xl p-5 text-center text-[#0A0A0A]"
                   dangerouslySetInnerHTML={{ __html: post.title.rendered }}
                 />
                 {post.acf?.banner_image?.url && (
@@ -148,9 +148,9 @@ const ImpactStoriesPost = ({ slug }) => {
             </div>
 
             {/* Related Stories */}
-            <div className="mt-10 p-20">
-              <div className="border">
-                <h2 className="text-2xl text-left p-4 border-b">
+            <div className="mt-10 lg:p-20">
+              <div className="border ">
+                <h2 className="lg:text-2xl text-xl text-left p-4 border-b">
                   Related Stories
                 </h2>
                 <div className="grid md:grid-cols-2  border-gray-300">
@@ -158,17 +158,17 @@ const ImpactStoriesPost = ({ slug }) => {
                     relatedPosts.map((post, index) => (
                       <div
                         key={post.id}
-                        className={`relative flex flex-col bg-white overflow-hidden p-10 group 
+                        className={`relative flex flex-col bg-white overflow-hidden p-10 group border-b lg:border-b-0 
           ${index < relatedPosts.length - 1 ? "border-t-0 border-gray-300" : ""}
           ${index % 1 === 0 ? "border-r-0 border-gray-300" : ""}`}
                       >
                         {/* Background Effect */}
-                        <div className="absolute inset-0 bg-[#000] transform scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100 z-0"></div>
+                        <div className="absolute inset-0  bg-[#000] transform scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100 z-0"></div>
                         <div className="relative z-10">
                           <div className="relative overflow-hidden">
                             {post.acf?.banner_image?.url && (
                               <>
-                                <h3 className="text-2xl text-[#262626] group-hover:text-white flex items-center mb-6">
+                                <h3 className="lg:text-2xl text-[#262626] group-hover:text-white flex items-center mb-6">
                                   {post.title.rendered}
                                 </h3>
                                 <Image
@@ -181,7 +181,7 @@ const ImpactStoriesPost = ({ slug }) => {
                               </>
                             )}
                           </div>
-                          <div className="pt-4 text-left transition-colors duration-300 flex items-center group-hover:text-white ">
+                          <div className="lg:pt-4 text-left transition-colors duration-300 flex items-center group-hover:text-white ">
                             <div
                               dangerouslySetInnerHTML={{
                                 __html: post.excerpt?.rendered || "",
@@ -213,8 +213,8 @@ const ImpactStoriesPost = ({ slug }) => {
               {allPosts && (
                 <Link href="/impact-stories">
                   <button className="focus:outline-none">
-                    <p className="flex items-center gap-3 text-xl text-[#404040]">
-                      <RiArrowLeftLine size={30} /> Back to All Impact Stories
+                    <p className="flex items-center lg:gap-3 lg:text-xl text-[#404040]">
+                      <RiArrowLeftLine className="lg:text-3xl"  /> Back to All Impact Stories
                     </p>
                   </button>
                 </Link>
@@ -222,9 +222,9 @@ const ImpactStoriesPost = ({ slug }) => {
               {nextPost && (
                 <Link href={`/impact-stories/${nextPost.slug}`}>
                   <button className="focus:outline-none">
-                    <p className="flex text-xl items-center gap-3 text-[#404040]">
+                    <p className="flex lg:text-xl items-center gap-3 text-[#404040]">
                       Next Impact Story
-                      <RiArrowRightLine size={30} />
+                      <RiArrowRightLine className="lg:text-3xl"  />
                     </p>
                   </button>
                 </Link>

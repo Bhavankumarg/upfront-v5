@@ -64,7 +64,7 @@ const Header = () => {
         <div className="flex items-center space-x-2">
           <Link href="/">
             <Image
-              src="/HomePage/upfrontLogo.png"
+              src="/HomePage/logo-upfront.png"
               width={70}
               height={50}
               alt="Logo"

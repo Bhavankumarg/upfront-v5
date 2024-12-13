@@ -1,17 +1,17 @@
+'use client'
 import React from 'react';
 import Posts from './ImpactStoriesPost'; // Adjust the import path accordingly
 
-const Page = ({ params }) => {
+const Page = async ({ params }) => {
+    const { slug } = await params; // Ensure params is awaited
 
     return (
         <>
             <div>
-                <Posts slug={params.slug} />
+                <Posts slug={slug} />
             </div>
         </>
     );
 };
 
 export default Page;
-
-
